@@ -63,7 +63,7 @@ if ($_SESSION['level'] == "") {
                         <hr class="bg-secondary">
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="per-index.php"><i class="fas fa-building mr-3"></i>Data Perusahaan</a>
+                        <!-- <a class="nav-link text-white" href="per-index.php"><i class="fas fa-building mr-3"></i>Data Perusahaan</a> -->
                         <hr class="bg-secondary">
                     </li>
                 </div>

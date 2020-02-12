@@ -14,6 +14,41 @@ include '../teamplate/head-user.php';
         </ol>
     </nav>
     <hr class="bg-secondary">
+
+    <h3 class="pt-3">Profile Perusahaan</h3>
+    <?php
+    $idperusahaan = $_GET['idperusahaan'];
+    $perusahaan = mysqli_query($koneksi, "SELECT * FROM tbperusahaan WHERE idperusahaan='$idperusahaan'");
+    while ($row = mysqli_fetch_array($perusahaan)) {
+    ?>
+        <table class="table table-striped table-bordered">
+            <tr>
+                <td width='200px' ;>ID Perusahaan</td>
+                <td>
+                    <a href="per-profile.php?idperusahaan=<?= $row['idperusahaan']; ?>">
+                        <?= $row['idperusahaan']; ?></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Nama Perusahaan</td>
+                <td><?= $row['nmperusahaan']; ?></td>
+            </tr>
+            <tr>
+                <td>Alamat Perusahaan</td>
+                <td><?= $row['alamatperusahaan']; ?></td>
+            </tr>
+            <tr>
+                <td>Tlp. Perusahaan</td>
+                <td>(<?= $row['kodetlp'] ?>) <?= $row['tlpperusahaan']; ?> </td>
+            </tr>
+            <tr>
+                <td>Fax</td>
+                <td>(<?= $row['kodetlp'] ?>) <?= $row['fax']; ?></td>
+            </tr>
+        </table>
+    <?php  } ?>
+
+    <h3 class="pt-3">Data Anggota</h3>
     <table class=" table table-striped table-hover" id="tabel">
         <thead>
             <tr>
